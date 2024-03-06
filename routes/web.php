@@ -14,7 +14,7 @@ Route::get('/scope', function () {
 
 Route::get('/', function () {
   if (!auth()->check()) {
-    return response('You are not logged in. <a href="https://ancestor.my.id/login">Login Here!</a>');
+    return response('You are not logged in. <a href="ancestor.my.id/login">Login Here!</a>');
   }
 
   $user = auth()->user();
@@ -27,7 +27,7 @@ Route::get('/', function () {
 
 Route::get('/absensi', function() {
   if (!auth()->check()) {
-    return response('You are not logged in. <a href="https://ancestor.my.id/login">Login Here!</a>');
+    return response('You are not logged in. <a href="ancestor.my.id/login">Login Here!</a>');
   }
 
   $user = auth()->user();
