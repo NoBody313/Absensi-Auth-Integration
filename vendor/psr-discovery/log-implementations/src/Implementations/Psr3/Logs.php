@@ -13,10 +13,13 @@ use PsrDiscovery\Implementations\Implementation;
 
 final class Logs extends Implementation implements LogsContract
 {
-    private static ?CandidatesCollection $candidates         = null;
+    private static ?CandidatesCollection $candidates = null;
+
     private static ?CandidatesCollection $extendedCandidates = null;
-    private static ?LoggerInterface      $singleton          = null;
-    private static ?LoggerInterface      $using              = null;
+
+    private static ?LoggerInterface      $singleton = null;
+
+    private static ?LoggerInterface      $using = null;
 
     public static function add(CandidateEntity $candidate): void
     {
@@ -29,7 +32,7 @@ final class Logs extends Implementation implements LogsContract
      */
     public static function allCandidates(): CandidatesCollection
     {
-        if (null !== self::$extendedCandidates) {
+        if (self::$extendedCandidates instanceof CandidatesCollection) {
             return self::$extendedCandidates;
         }
 
@@ -62,7 +65,7 @@ final class Logs extends Implementation implements LogsContract
      */
     public static function candidates(): CandidatesCollection
     {
-        if (null !== self::$candidates) {
+        if (self::$candidates instanceof CandidatesCollection) {
             return self::$candidates;
         }
 
@@ -118,7 +121,7 @@ final class Logs extends Implementation implements LogsContract
      */
     public static function discover(): ?LoggerInterface
     {
-        if (null !== self::$using) {
+        if (self::$using instanceof LoggerInterface) {
             return self::$using;
         }
 
@@ -146,7 +149,7 @@ final class Logs extends Implementation implements LogsContract
 
     public static function singleton(): ?LoggerInterface
     {
-        if (null !== self::$using) {
+        if (self::$using instanceof LoggerInterface) {
             return self::$using;
         }
 
@@ -156,6 +159,6 @@ final class Logs extends Implementation implements LogsContract
     public static function use(?LoggerInterface $instance): void
     {
         self::$singleton = $instance;
-        self::$using     = $instance;
+        self::$using = $instance;
     }
 }

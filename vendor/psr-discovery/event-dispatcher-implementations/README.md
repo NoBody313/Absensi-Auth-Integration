@@ -17,7 +17,7 @@ This is largely intended for inclusion in libraries like SDKs that wish to suppo
 
 ## Requirements
 
--   PHP 8.0+
+-   PHP 8.1+
 -   Composer 2.0+
 
 Successful discovery requires the presence of a compatible implementation in the host application. This library does not install any implementations for you.
@@ -28,7 +28,7 @@ The following `psr/event-dispatcher-implementation` implementations are discover
 
 -   [carlosas/simple-event-dispatcher](https://github.com/carlosas/simple-event-dispatcher) ^0.1.0
 -   [league/event](https://github.com/thephpleague/event) ^3.0
--   [symfony/event-dispatcher](https://github.com/symfony/event-dispatcher) ^4.3 | ^5.0 | ^6.0
+-   [symfony/event-dispatcher](https://github.com/symfony/event-dispatcher) ^4.3 | ^5.0 | ^6.0 | ^7.0
 -   [yiisoft/event-dispatcher](https://github.com/yiisoft/event-dispatcher) ^1.0
 
 The following mock implementations are also available:

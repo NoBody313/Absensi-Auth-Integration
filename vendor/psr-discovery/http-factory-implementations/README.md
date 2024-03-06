@@ -17,7 +17,7 @@ This is largely intended for inclusion in libraries like SDKs that wish to suppo
 
 ## Requirements
 
--   PHP 8.0+
+-   PHP 8.1+
 -   Composer 2.0+
 
 Successful discovery requires the presence of a compatible implementation in the host application. This library does not install any implementations for you.
@@ -62,6 +62,12 @@ $responseFactory = Discover::httpResponseFactory();
 
 // Returns a PSR-17 StreamFactoryInterface instance
 $streamFactory = Discover::httpStreamFactory();
+
+// Returns a PSR-17 UploadedFileFactoryInterface instance
+$uploadedFileFactory = Discover::httpUploadedFileFactory();
+
+// Returns a PSR-17 UriFactoryInterface instance
+$uriFactory = Discover::httpUriFactory();
 
 // Returns a PSR-7 RequestInterface instance
 $request = $requestFactory->createRequest('GET', 'https://example.com');

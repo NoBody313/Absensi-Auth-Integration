@@ -13,10 +13,13 @@ use PsrDiscovery\Implementations\Implementation;
 
 final class Clients extends Implementation implements ClientsContract
 {
-    private static ?CandidatesCollection $candidates         = null;
+    private static ?CandidatesCollection $candidates = null;
+
     private static ?CandidatesCollection $extendedCandidates = null;
-    private static ?ClientInterface      $singleton          = null;
-    private static ?ClientInterface      $using              = null;
+
+    private static ?ClientInterface      $singleton = null;
+
+    private static ?ClientInterface      $using = null;
 
     public static function add(CandidateEntity $candidate): void
     {
@@ -29,7 +32,7 @@ final class Clients extends Implementation implements ClientsContract
      */
     public static function allCandidates(): CandidatesCollection
     {
-        if (null !== self::$extendedCandidates) {
+        if (self::$extendedCandidates instanceof CandidatesCollection) {
             return self::$extendedCandidates;
         }
 
@@ -44,7 +47,7 @@ final class Clients extends Implementation implements ClientsContract
      */
     public static function candidates(): CandidatesCollection
     {
-        if (null !== self::$candidates) {
+        if (self::$candidates instanceof CandidatesCollection) {
             return self::$candidates;
         }
 
@@ -72,7 +75,7 @@ final class Clients extends Implementation implements ClientsContract
 
         self::$candidates->add(CandidateEntity::create(
             package: 'symfony/http-client',
-            version: '^4.3 | ^5.0 | ^6.0',
+            version: '^4.3 | ^5.0 | ^6.0 | ^7.0',
             builder: static fn (string $class = '\Symfony\Component\HttpClient\Psr18Client'): object => new $class(
                 responseFactory: Discover::httpResponseFactory(),
                 streamFactory: Discover::httpStreamFactory(),
@@ -138,7 +141,7 @@ final class Clients extends Implementation implements ClientsContract
      */
     public static function discover(): ?ClientInterface
     {
-        if (null !== self::$using) {
+        if (self::$using instanceof ClientInterface) {
             return self::$using;
         }
 
@@ -166,7 +169,7 @@ final class Clients extends Implementation implements ClientsContract
 
     public static function singleton(): ?ClientInterface
     {
-        if (null !== self::$using) {
+        if (self::$using instanceof ClientInterface) {
             return self::$using;
         }
 
@@ -176,6 +179,6 @@ final class Clients extends Implementation implements ClientsContract
     public static function use(?ClientInterface $instance): void
     {
         self::$singleton = $instance;
-        self::$using     = $instance;
+        self::$using = $instance;
     }
 }

@@ -65,7 +65,7 @@ return array(
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Psr\\Clock\\' => array($vendorDir . '/psr/clock/src'),
     'Psr\\Cache\\' => array($vendorDir . '/psr/cache/src'),
-    'PsrDiscovery\\' => array($vendorDir . '/psr-discovery/cache-implementations/src', $vendorDir . '/psr-discovery/container-implementations/src', $vendorDir . '/psr-discovery/discovery/src', $vendorDir . '/psr-discovery/event-dispatcher-implementations/src', $vendorDir . '/psr-discovery/http-client-implementations/src', $vendorDir . '/psr-discovery/http-factory-implementations/src', $vendorDir . '/psr-discovery/log-implementations/src'),
+    'PsrDiscovery\\' => array($vendorDir . '/psr-discovery/discovery/src', $vendorDir . '/psr-discovery/log-implementations/src', $vendorDir . '/psr-discovery/http-factory-implementations/src', $vendorDir . '/psr-discovery/http-client-implementations/src', $vendorDir . '/psr-discovery/event-dispatcher-implementations/src', $vendorDir . '/psr-discovery/container-implementations/src', $vendorDir . '/psr-discovery/cache-implementations/src'),
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'PhpOption\\' => array($vendorDir . '/phpoption/phpoption/src/PhpOption'),
     'PhpOffice\\PhpWord\\' => array($vendorDir . '/phpoffice/phpword/src/PhpWord'),

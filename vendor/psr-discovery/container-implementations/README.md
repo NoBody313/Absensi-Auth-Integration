@@ -17,7 +17,7 @@ This is largely intended for inclusion in libraries like SDKs that wish to suppo
 
 ## Requirements
 
--   PHP 8.0+
+-   PHP 8.1+
 -   Composer 2.0+
 
 Successful discovery requires the presence of a compatible implementation in the host application. This library does not install any implementations for you.
@@ -35,8 +35,8 @@ The following `psr/container-implementation` implementations are discovered and 
 -   [league/container](https://github.com/thephpleague/container) ^3.0 | ^4.0
 -   [php-di/php-di](https://github.com/PHP-DI/PHP-DI) ^5.4.2 | ^6.0 | ^7.0
 -   [silverstripe/framework](https://github.com/silverstripe/silverstripe-framework) ^4.0
--   [symfony/dependency-injection](https://github.com/symfony/dependency-injection) ^3.3 | ^4.0 | ^5.0 | ^6.0
--   [symfony/symfony](https://github.com/symfony/symfony) ^3.3 | ^4.0 | ^5.0 | ^6.0
+-   [symfony/dependency-injection](https://github.com/symfony/dependency-injection) ^3.3 | ^4.0 | ^5.0 | ^6.0 | ^7.0
+-   [symfony/symfony](https://github.com/symfony/symfony) ^3.3 | ^4.0 | ^5.0 | ^6.0 | ^7.0
 -   [yiisoft/di](https://github.com/yiisoft/di) ^1.0
 
 The following mock implementations are also available:
